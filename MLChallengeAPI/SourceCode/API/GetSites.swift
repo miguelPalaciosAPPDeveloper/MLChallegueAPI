@@ -14,6 +14,7 @@ struct GetSites: HTTPRequest {
     
     let endpoint: String
     let method: HTTPMethod = .get
+    let task: HTTPTask = .request
     let body: Body? = nil
     
     init() {

@@ -5,7 +5,7 @@
 //  Created by Miguel Angel De Leon Palacios on 06/04/21.
 //
 
-import Foundation
+import UIKit
 
 /**
  Class to send requests.
@@ -38,12 +38,18 @@ final class HTTPRouter {
      - Returns: new URLRequest object.
      */
     private func createURLRequest<Request: HTTPRequest>(for request: Request) throws -> URLRequest {
-        guard let url = URL(string: baseURL + request.endpoint) else {
+        let urlString = request.task == .request ? baseURL : ""
+        
+        guard let url = URL(string: urlString + request.endpoint) else {
             throw ServicesResponseError.urlBadFormat
         }
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
-        urlRequest.cachePolicy = .reloadIgnoringCacheData
+        urlRequest.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
+        urlRequest.timeoutInterval = constants.timeOutValue
+        
+        guard request.task == .request else { return urlRequest }
+        
         urlRequest.setValue(constants.contentTypeValue, forHTTPHeaderField: constants.contentTypeKey)
         let headers = (self.headersProvider?.getHeaders() ?? [:]).merging(request.headers) { $1 }
         headers.forEach { urlRequest.setValue($1, forHTTPHeaderField: $0) }
@@ -74,14 +80,21 @@ final class HTTPRouter {
         case (error: .some(let requestError), data: _):
             return responseFactory.createFailResponse(error: .httpError(error: requestError))
         case (error: .none, data: .some(let responseData)):
-            do {
-                let decodedResponse = try responseDecoder.decode(Request.Response.self, from: responseData)
-                return responseFactory.createSuccessResponse(response: decodedResponse)
-            } catch let error {
-                let json = (try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]) ?? [:]
-                print("[DEBUG] ERROR RECEIVED: \n \(error) \n [DEBUG] WHILE PARSING: \n \(json)")
-                return responseFactory.createFailResponse(error: .badResponseCodification(error: error))
+            guard request.task == .downloadImage,
+                  let response = responseData as? Request.Response else {
+                do {
+                    let decodedResponse = try responseDecoder.decode(Request.Response.self, from: responseData)
+                    return responseFactory.createSuccessResponse(response: decodedResponse)
+                } catch let error {
+                    let json = (try? JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any]) ?? [:]
+                    print("[DEBUG] ERROR RECEIVED: \n \(error) \n [DEBUG] WHILE PARSING: \n \(json)")
+                    return responseFactory.createFailResponse(error: .badResponseCodification(error: error))
+                }
             }
+            
+            return responseFactory.createSuccessResponse(response: response)
+            
+            
         case (error: .none, data: .none):
             return responseFactory.createFailResponse(error: .serverError)
         }

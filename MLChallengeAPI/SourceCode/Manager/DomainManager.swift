@@ -11,7 +11,7 @@ public protocol DomainManager {
     init(httpClient: HTTPClient)
 }
 
-public extension DomainManager {
+extension DomainManager {
     func completeInMainThread<Arg>(completion: @escaping (Arg, URLRequest?, HTTPURLResponse?) -> Void) -> ((Arg, URLRequest?, HTTPURLResponse?) -> Void) {
         return { arg, urlRequest, urlResponse in
             DispatchQueue.main.async {

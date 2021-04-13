@@ -16,4 +16,5 @@ enum ServicesConstants {
     static let httpBadRequest = 400
     static let httpResourceNotFound = 404
     static let httpAuthorizationErrorRange = 401...499
+    static let timeOutValue: TimeInterval = 6.0
 }

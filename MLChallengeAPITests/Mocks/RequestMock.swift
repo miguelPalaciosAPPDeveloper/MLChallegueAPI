@@ -17,6 +17,7 @@ struct RequestMock: HTTPRequest {
     
     let endpoint: String
     let method: HTTPMethod = .get
+    let task: HTTPTask = .request
     let body: Body? = Body()
     
     init(endPoint: String) {
@@ -33,6 +34,7 @@ struct EmptyRequestMock: HTTPRequest {
     
     let endpoint: String
     let method: HTTPMethod = .get
+    let task: HTTPTask = .request
     let body: Body? = Body()
     
     init(endPoint: String) {

@@ -16,6 +16,7 @@ public protocol HTTPRequest {
     
     var endpoint: String { get }
     var method: HTTPMethod { get }
+    var task: HTTPTask { get }
     var body: Body? { get }
     var headers: [String: String] { get }
 }

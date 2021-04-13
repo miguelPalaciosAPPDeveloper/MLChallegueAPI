@@ -35,7 +35,7 @@ class CategoriesServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
         
         if let response = mockResponse, case let .success(model) = response {
             XCTAssertTrue(!model.isEmpty)
@@ -76,7 +76,7 @@ class CategoriesServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
         
         if let response = mockResponse, case let .success(model) = response {
             XCTAssertTrue(!model.childrenCategories.isEmpty)
@@ -96,7 +96,7 @@ class CategoriesServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
         
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
         
         if let response = mockResponse, case let .failure(error) = response {
             XCTAssertTrue(error == .serverError)

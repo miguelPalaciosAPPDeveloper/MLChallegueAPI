@@ -28,6 +28,11 @@
 		342821472620F44200DB559F /* ProductsServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 342821462620F44200DB559F /* ProductsServiceManager.swift */; };
 		3428214B2620F5AE00DB559F /* ProductsServiceManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3428214A2620F5AE00DB559F /* ProductsServiceManagerTest.swift */; };
 		342821512620F6D500DB559F /* MLResultResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 342821502620F6D500DB559F /* MLResultResponse.json */; };
+		34382454262524E400BFB5F8 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34382453262524E400BFB5F8 /* HTTPTask.swift */; };
+		3438245C262525F400BFB5F8 /* DownloadProductImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438245B262525F400BFB5F8 /* DownloadProductImageManager.swift */; };
+		34382460262526B900BFB5F8 /* GetProductImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438245F262526B900BFB5F8 /* GetProductImage.swift */; };
+		3438246826252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3438246726252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift */; };
+		3438247026253D7400BFB5F8 /* meme.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3438246F26253D7400BFB5F8 /* meme.jpg */; };
 		34B1F07B261CC340005BCF25 /* MLChallengeAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34B1F071261CC33F005BCF25 /* MLChallengeAPI.framework */; };
 		34B1F082261CC340005BCF25 /* MLChallengeAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 34B1F074261CC340005BCF25 /* MLChallengeAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		34B1F096261CC4E1005BCF25 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1F095261CC4E1005BCF25 /* HTTPMethod.swift */; };
@@ -80,6 +85,11 @@
 		342821462620F44200DB559F /* ProductsServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceManager.swift; sourceTree = "<group>"; };
 		3428214A2620F5AE00DB559F /* ProductsServiceManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsServiceManagerTest.swift; sourceTree = "<group>"; };
 		342821502620F6D500DB559F /* MLResultResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MLResultResponse.json; sourceTree = "<group>"; };
+		34382453262524E400BFB5F8 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		3438245B262525F400BFB5F8 /* DownloadProductImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProductImageManager.swift; sourceTree = "<group>"; };
+		3438245F262526B900BFB5F8 /* GetProductImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductImage.swift; sourceTree = "<group>"; };
+		3438246726252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadProductImageManagerTest.swift; sourceTree = "<group>"; };
+		3438246F26253D7400BFB5F8 /* meme.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = meme.jpg; sourceTree = "<group>"; };
 		34B1F071261CC33F005BCF25 /* MLChallengeAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLChallengeAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34B1F074261CC340005BCF25 /* MLChallengeAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLChallengeAPI.h; sourceTree = "<group>"; };
 		34B1F075261CC340005BCF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +135,7 @@
 		342820EE261FB18E00DB559F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3438246F26253D7400BFB5F8 /* meme.jpg */,
 				342821502620F6D500DB559F /* MLResultResponse.json */,
 				342821382620EE6400DB559F /* MLCategoriesResponse.json */,
 				342821392620EE6400DB559F /* MLSubcategoriesResponse.json */,
@@ -180,6 +191,7 @@
 				3428212E2620DFF900DB559F /* SiteServicesManagerTest.swift */,
 				342821402620EFE700DB559F /* CategoriesServiceManagerTest.swift */,
 				3428214A2620F5AE00DB559F /* ProductsServiceManagerTest.swift */,
+				3438246726252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift */,
 				34B1F081261CC340005BCF25 /* Info.plist */,
 			);
 			path = MLChallengeAPITests;
@@ -202,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				34B1F095261CC4E1005BCF25 /* HTTPMethod.swift */,
+				34382453262524E400BFB5F8 /* HTTPTask.swift */,
 				34B1F099261CC51E005BCF25 /* HTTPRequest.swift */,
 				34B1F0AE261D08A4005BCF25 /* HTTPRouter.swift */,
 				34B1F0BA261D1784005BCF25 /* HTTPClient.swift */,
@@ -226,6 +239,7 @@
 				34282115261FD49F00DB559F /* SitesServiceManager.swift */,
 				342821342620EA7F00DB559F /* CategoriesServiceManager.swift */,
 				342821462620F44200DB559F /* ProductsServiceManager.swift */,
+				3438245B262525F400BFB5F8 /* DownloadProductImageManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -250,6 +264,7 @@
 				34282105261FCC3400DB559F /* GetProductByCategory.swift */,
 				34282109261FCCDA00DB559F /* GetProductsByQuery.swift */,
 				34282111261FD08700DB559F /* GetSubCategories.swift */,
+				3438245F262526B900BFB5F8 /* GetProductImage.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -374,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				342821512620F6D500DB559F /* MLResultResponse.json in Resources */,
+				3438247026253D7400BFB5F8 /* meme.jpg in Resources */,
 				3428213B2620EE6400DB559F /* MLSubcategoriesResponse.json in Resources */,
 				342821212620DAC300DB559F /* MLSitesResponse.json in Resources */,
 				3428213A2620EE6400DB559F /* MLCategoriesResponse.json in Resources */,
@@ -399,6 +415,7 @@
 				34C1288D261E4BE3004A4CD7 /* MLChallengueAPIConfig.swift in Sources */,
 				34C12885261E3966004A4CD7 /* HTTPResponseFactory.swift in Sources */,
 				34B1F09E261CCE2F005BCF25 /* ServicesConstants.swift in Sources */,
+				34382454262524E400BFB5F8 /* HTTPTask.swift in Sources */,
 				34B1F0A8261CFF72005BCF25 /* ServiceResponseModels.swift in Sources */,
 				34B1F0B5261D147D005BCF25 /* DomainManager.swift in Sources */,
 				34B1F09A261CC51E005BCF25 /* HTTPRequest.swift in Sources */,
@@ -407,6 +424,8 @@
 				342820FE261FC11D00DB559F /* GetCategories.swift in Sources */,
 				34C12891261E4C8F004A4CD7 /* EnvironmentType.swift in Sources */,
 				3428210E261FCD5200DB559F /* MLCategoryResult.swift in Sources */,
+				3438245C262525F400BFB5F8 /* DownloadProductImageManager.swift in Sources */,
+				34382460262526B900BFB5F8 /* GetProductImage.swift in Sources */,
 				34282112261FD08700DB559F /* GetSubCategories.swift in Sources */,
 				342820F6261FC03400DB559F /* GetSites.swift in Sources */,
 				34B1F0A3261CFE0C005BCF25 /* ServerManager.swift in Sources */,
@@ -423,6 +442,7 @@
 				34C128AA261F7554004A4CD7 /* RequestMock.swift in Sources */,
 				3428212F2620DFF900DB559F /* SiteServicesManagerTest.swift in Sources */,
 				342821412620EFE700DB559F /* CategoriesServiceManagerTest.swift in Sources */,
+				3438246826252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift in Sources */,
 				3428214B2620F5AE00DB559F /* ProductsServiceManagerTest.swift in Sources */,
 				34C1289E261F7034004A4CD7 /* HTTPRouterTest.swift in Sources */,
 				34C12897261F5B90004A4CD7 /* ServerManagerTest.swift in Sources */,

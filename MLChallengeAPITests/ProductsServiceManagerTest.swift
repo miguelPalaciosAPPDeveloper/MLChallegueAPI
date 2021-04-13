@@ -36,7 +36,7 @@ class ProductsServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
 
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
 
         if let response = mockResponse, case let .success(model) = response {
             XCTAssertTrue(!model.products.isEmpty)
@@ -56,7 +56,7 @@ class ProductsServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
 
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
 
         if let response = mockResponse, case let .failure(error) = response {
             XCTAssertTrue(error == .serverError)
@@ -77,7 +77,7 @@ class ProductsServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
 
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
 
         if let response = mockResponse, case let .success(model) = response {
             XCTAssertTrue(!model.products.isEmpty)
@@ -98,7 +98,7 @@ class ProductsServiceManagerTest: XCTestCase {
             expectation.fulfill()
         })
 
-        waitForExpectations(timeout: 1.0, handler: nil)
+        waitForExpectations(timeout: 0.25, handler: nil)
 
         if let response = mockResponse, case let .failure(error) = response {
             XCTAssertTrue(error == .serverError)

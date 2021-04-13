@@ -5,7 +5,7 @@
 //  Created by Miguel Angel De Leon Palacios on 09/04/21.
 //
 
-import Foundation
+import UIKit
 @testable import MLChallengeAPI
 
 extension HTTPClient {
@@ -19,5 +19,13 @@ extension HTTPClient {
         }
         
         return try? jsonDecoder.decode(T.self, from: data)
+    }
+    
+    func loadImageData(name: String) -> Data? {
+        let testBundle = Bundle(for: type(of: self))
+        guard let image = UIImage(named: name, in: testBundle, with: nil) else {
+            return nil
+        }
+        return image.jpegData(compressionQuality: 1.0)
     }
 }

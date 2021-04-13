@@ -28,9 +28,16 @@ final class HTTPRouterMock: HTTPClient {
                 return
             }
             
-            if let model: Request.Response = self.loadDefaultResponse(name: fileName) {
-                print("Response: \(model)")
-                completion(responseFactory.createSuccessResponse(response: model))
+            switch request.task {
+            case .downloadImage:
+                if let imageData = self.loadImageData(name: fileName), let response = imageData as? Request.Response {
+                    completion(responseFactory.createSuccessResponse(response: response))
+                }
+            case .request:
+                if let model: Request.Response = self.loadDefaultResponse(name: fileName) {
+                    print("Response: \(model)")
+                    completion(responseFactory.createSuccessResponse(response: model))
+                }
             }
         }
     }
