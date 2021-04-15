@@ -16,4 +16,10 @@ public struct MLSite: Codable {
     public let defaultCurrencyID: String
     public let id: String
     public let name: String
+    
+    public init(defaultCurrencyID: String, id: String, name: String) {
+        self.defaultCurrencyID = defaultCurrencyID
+        self.id = id
+        self.name = name
+    }
 }

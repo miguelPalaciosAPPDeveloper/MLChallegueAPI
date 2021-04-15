@@ -18,11 +18,21 @@ public struct MLCategoryResult: Codable {
     
     public let id: String?
     public let name: String?
-    public let picture: String?
-    public let permalink: String?
-    public let pathFromRoot: [MLCategory]?
+    public var picture: String?
+    public var permalink: String?
+    public var pathFromRoot: [MLCategory]
     public let totalItemsInThisCategory: Int?
-    public let childrenCategories: [MLChildrenCategory?]
+    public var childrenCategories: [MLChildrenCategory]
+    
+    public init(id: String?, name: String?, totalItemsInThisCategory: Int?) {
+        self.id = id
+        self.name = name
+        self.totalItemsInThisCategory = totalItemsInThisCategory
+        self.picture = nil
+        self.permalink = nil
+        self.pathFromRoot = []
+        self.childrenCategories = []
+    }
 }
 
 // MARK: - Children category
@@ -35,4 +45,10 @@ public struct MLChildrenCategory: Codable {
     public let id: String?
     public let name: String?
     public let totalItemsInThisCategory: Int?
+    
+    public init(id: String?, name: String?, totalItemsInThisCategory: Int?) {
+        self.id = id
+        self.name = name
+        self.totalItemsInThisCategory = totalItemsInThisCategory
+    }
 }

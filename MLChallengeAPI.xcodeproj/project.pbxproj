@@ -43,6 +43,7 @@
 		34B1F0AF261D08A4005BCF25 /* HTTPRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1F0AE261D08A4005BCF25 /* HTTPRouter.swift */; };
 		34B1F0B5261D147D005BCF25 /* DomainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1F0B4261D147D005BCF25 /* DomainManager.swift */; };
 		34B1F0BB261D1784005BCF25 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34B1F0BA261D1784005BCF25 /* HTTPClient.swift */; };
+		34BFF8112628870B00C4F622 /* ResponseModelsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BFF8102628870B00C4F622 /* ResponseModelsTest.swift */; };
 		34C12885261E3966004A4CD7 /* HTTPResponseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C12884261E3966004A4CD7 /* HTTPResponseFactory.swift */; };
 		34C1288D261E4BE3004A4CD7 /* MLChallengueAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C1288C261E4BE3004A4CD7 /* MLChallengueAPIConfig.swift */; };
 		34C12891261E4C8F004A4CD7 /* EnvironmentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C12890261E4C8F004A4CD7 /* EnvironmentType.swift */; };
@@ -103,6 +104,7 @@
 		34B1F0AE261D08A4005BCF25 /* HTTPRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPRouter.swift; sourceTree = "<group>"; };
 		34B1F0B4261D147D005BCF25 /* DomainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainManager.swift; sourceTree = "<group>"; };
 		34B1F0BA261D1784005BCF25 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		34BFF8102628870B00C4F622 /* ResponseModelsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModelsTest.swift; sourceTree = "<group>"; };
 		34C12884261E3966004A4CD7 /* HTTPResponseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseFactory.swift; sourceTree = "<group>"; };
 		34C1288C261E4BE3004A4CD7 /* MLChallengueAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLChallengueAPIConfig.swift; sourceTree = "<group>"; };
 		34C12890261E4C8F004A4CD7 /* EnvironmentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentType.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				342821402620EFE700DB559F /* CategoriesServiceManagerTest.swift */,
 				3428214A2620F5AE00DB559F /* ProductsServiceManagerTest.swift */,
 				3438246726252D6C00BFB5F8 /* DownloadProductImageManagerTest.swift */,
+				34BFF8102628870B00C4F622 /* ResponseModelsTest.swift */,
 				34B1F081261CC340005BCF25 /* Info.plist */,
 			);
 			path = MLChallengeAPITests;
@@ -438,6 +441,7 @@
 			files = (
 				342821272620DAD800DB559F /* HTTPClientMock.swift in Sources */,
 				3428211B2620DA1C00DB559F /* HTTClientExtension.swift in Sources */,
+				34BFF8112628870B00C4F622 /* ResponseModelsTest.swift in Sources */,
 				34C128A4261F72F4004A4CD7 /* URLSessionMock.swift in Sources */,
 				34C128AA261F7554004A4CD7 /* RequestMock.swift in Sources */,
 				3428212F2620DFF900DB559F /* SiteServicesManagerTest.swift in Sources */,
