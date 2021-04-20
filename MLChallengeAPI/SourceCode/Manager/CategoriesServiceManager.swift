@@ -18,7 +18,7 @@ public protocol CategoriesServiceManager: DomainManager {
 public final class CategoriesServiceManagerImplementation: CategoriesServiceManager {
     private let httpClient: HTTPClient
     
-    public init(httpClient: HTTPClient) {
+    public init(httpClient: HTTPClient = ServerManager().httpRouter) {
         self.httpClient = httpClient
     }
     
