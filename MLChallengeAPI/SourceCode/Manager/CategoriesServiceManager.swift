@@ -15,14 +15,14 @@ public protocol CategoriesServiceManager: DomainManager {
 }
 
 // MARK: - Implementation
-final class CategoriesServiceManagerImplementation: CategoriesServiceManager {
+public final class CategoriesServiceManagerImplementation: CategoriesServiceManager {
     private let httpClient: HTTPClient
     
-    init(httpClient: HTTPClient) {
+    public init(httpClient: HTTPClient) {
         self.httpClient = httpClient
     }
     
-    func getCategories(site: String, completion: @escaping (Result<[MLCategory], ServicesResponseError>, URLRequest?, HTTPURLResponse?) -> Void) {
+    public func getCategories(site: String, completion: @escaping (Result<[MLCategory], ServicesResponseError>, URLRequest?, HTTPURLResponse?) -> Void) {
         let completeInMainThread = self.completeInMainThread(completion: completion)
         let request = GetCategories(site: site)
         
@@ -36,7 +36,7 @@ final class CategoriesServiceManagerImplementation: CategoriesServiceManager {
         }
     }
     
-    func getSubcategories(category: String, completion: @escaping (Result<MLCategoryResult, ServicesResponseError>, URLRequest?, HTTPURLResponse?) -> Void) {
+    public func getSubcategories(category: String, completion: @escaping (Result<MLCategoryResult, ServicesResponseError>, URLRequest?, HTTPURLResponse?) -> Void) {
         let completeInMainThread = self.completeInMainThread(completion: completion)
         let request = GetSubCategories(category: category)
         
