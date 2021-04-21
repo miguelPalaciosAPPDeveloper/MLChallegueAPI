@@ -19,7 +19,7 @@ public final class ProductsServiceManagerImplementation: ProductsServiceManager 
     
     private let httpClient: HTTPClient
     
-    public init(httpClient: HTTPClient) {
+    public required init(httpClient: HTTPClient = ServerManager().httpRouter) {
         self.httpClient = httpClient
     }
     

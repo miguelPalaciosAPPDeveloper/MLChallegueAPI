@@ -16,7 +16,7 @@ public protocol DownloadProductImageManager: DomainManager {
 public final class DownloadProductImageManagerImplementation: DownloadProductImageManager {
     private let httpClient: HTTPClient
     
-    public init(httpClient: HTTPClient) {
+    public required init(httpClient: HTTPClient = ServerManager().httpRouter) {
         self.httpClient = httpClient
     }
     
