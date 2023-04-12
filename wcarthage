@@ -10,4 +10,4 @@ echo 'VALID_ARCHS = $(inherited) x86_64' >> $xcconfig
 export XCODE_XCCONFIG_FILE="$xcconfig"
 echo "Workaround applied. xcconfig here: $XCODE_XCCONFIG_FILE"
 
-carthage $@
+#carthage $@
